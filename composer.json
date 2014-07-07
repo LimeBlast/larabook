@@ -5,7 +5,8 @@
 	"license": "MIT",
 	"require": {
 		"laravel/framework": "4.2.*",
-        "laracasts/commander": "~1.0"
+        "laracasts/commander": "~1.0",
+        "anahkiasen/former": "~3.4"
 	},
     "require-dev": {
         "way/generators": "~2.0",

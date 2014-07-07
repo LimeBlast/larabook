@@ -122,8 +122,12 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 
+		# additional packages
+		'Former\FormerServiceProvider',
+		'Laracasts\Commander\CommanderServiceProvider',
+
+		# development packages
 		'Way\Generators\GeneratorsServiceProvider',
-		'Laracasts\Commander\CommanderServiceProvider'
 
 	),
 
@@ -191,6 +195,8 @@ return array(
 		'URL'             => 'Illuminate\Support\Facades\URL',
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
+
+		'Former'          => 'Former\Facades\Former',
 
 	),
 
