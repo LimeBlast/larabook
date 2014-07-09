@@ -125,6 +125,7 @@ return array(
 		# additional packages
 		'Former\FormerServiceProvider',
 		'Laracasts\Commander\CommanderServiceProvider',
+		'Laracasts\Validation\ValidationServiceProvider',
 
 		# development packages
 		'Way\Generators\GeneratorsServiceProvider',

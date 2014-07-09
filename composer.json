@@ -6,7 +6,8 @@
 	"require": {
 		"laravel/framework": "4.2.*",
         "laracasts/commander": "~1.0",
-        "anahkiasen/former": "~3.4"
+        "anahkiasen/former": "~3.4",
+		"laracasts/validation": "1.1.*"
 	},
     "require-dev": {
         "way/generators": "~2.0",
@@ -21,7 +22,10 @@
 			"app/database/migrations",
 			"app/database/seeds",
 			"app/tests/TestCase.php"
-		]
+		],
+        "psr-4": {
+            "Larabook\\": "app/Larabook"
+        }
 	},
 	"scripts": {
 		"post-install-cmd": [
