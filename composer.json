@@ -7,7 +7,9 @@
 		"laravel/framework": "4.2.*",
         "laracasts/commander": "~1.0",
         "anahkiasen/former": "~3.4",
-		"laracasts/validation": "1.1.*"
+		"laracasts/validation": "1.1.*",
+		"barryvdh/laravel-ide-helper": "1.*",
+		"doctrine/dbal": "~2.3"
 	},
     "require-dev": {
         "way/generators": "~2.0",
@@ -34,6 +36,7 @@
 		],
 		"post-update-cmd": [
 			"php artisan clear-compiled",
+            "php artisan ide-helper:generate",
 			"php artisan optimize"
 		],
 		"post-create-project-cmd": [

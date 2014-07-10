@@ -129,6 +129,7 @@ return array(
 
 		# development packages
 		'Way\Generators\GeneratorsServiceProvider',
+		'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
 
 	),
 
