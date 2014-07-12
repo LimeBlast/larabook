@@ -7,10 +7,10 @@
 
 	<fieldset>
 		{{ Former::legend('Details')}}
-		{{ Former::text('username')->required() }}
-		{{ Former::email('email')->required() }}
-		{{ Former::password('password')->required() }}
-		{{ Former::password('password_confirmation')->required() }}
+		{{ Former::text('username') }}
+		{{ Former::email('email') }}
+		{{ Former::password('password') }}
+		{{ Former::password('password_confirmation') }}
 	</fieldset>
 
 	{{ Former::actions()->primary_submit('Sign Up')->inverse_reset('Reset') }}
