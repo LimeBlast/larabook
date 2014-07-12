@@ -6,8 +6,14 @@ use Laracasts\Commander\CommandHandler;
 
 class RegisterUserCommandHandler implements CommandHandler {
 
+	/**
+	 * @var \Larabook\Users\UserRepository
+	 */
 	protected $repository;
 
+	/**
+	 * @param UserRepository $repository
+	 */
 	function __construct(UserRepository $repository)
 	{
 		$this->repository = $repository;
