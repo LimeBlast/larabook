@@ -122,6 +122,8 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 
+		'Larabook\EventingServiceProvider',
+
 		# additional packages
 		'Former\FormerServiceProvider',
 		'Laracasts\Commander\CommanderServiceProvider',
