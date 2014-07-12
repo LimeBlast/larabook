@@ -1,8 +1,8 @@
 <?php
 
+use Larabook\Core\CommandBus;
 use Larabook\Forms\RegistrationForm;
 use Larabook\Registration\RegisterUserCommand;
-use Larabook\Core\CommandBus;
 
 class RegistrationController extends BaseController {
 
@@ -47,6 +47,8 @@ class RegistrationController extends BaseController {
 		);
 
 		Auth::login($user);
+
+		Flash::overlay('You are now a Larabook member!');
 
 		return Redirect::home();
 	}

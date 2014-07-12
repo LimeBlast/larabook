@@ -128,6 +128,7 @@ return array(
 		'Former\FormerServiceProvider',
 		'Laracasts\Commander\CommanderServiceProvider',
 		'Laracasts\Validation\ValidationServiceProvider',
+		'Laracasts\Flash\FlashServiceProvider',
 
 		# development packages
 		'Way\Generators\GeneratorsServiceProvider',
@@ -200,6 +201,7 @@ return array(
 		'View'            => 'Illuminate\Support\Facades\View',
 
 		'Former'          => 'Former\Facades\Former',
+		'Flash'           => 'Laracasts\Flash\Flash'
 
 	),
 

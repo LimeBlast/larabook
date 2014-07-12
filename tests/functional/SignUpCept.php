@@ -14,7 +14,7 @@ $I->fillField('Password confirmation', 'demo');
 $I->click('Sign Up');
 
 $I->seeCurrentUrlEquals('');
-$I->see('Welcome to Larabook!');
+$I->see('You are now a Larabook member!');
 
 $I->seeRecord('users', [
 	'username' => 'JohnDoe',
