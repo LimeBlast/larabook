@@ -22,8 +22,8 @@
 					<li class="dropdown">
 						
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-							<img class="nav-gravatar" src="{{ $currentUser->present()->gravatar }}" alt="{{ $currentUser->username }} Avatar" />
-							{{ $currentUser->username }} <span class="caret"></span>
+							<img class="nav-gravatar" src="{{ $currentUser->present()->gravatar }}" alt="{{{ $currentUser->username }}} Avatar" />
+							{{{ $currentUser->username }}} <span class="caret"></span>
 						</a>
 
 						<ul class="dropdown-menu" role="menu">

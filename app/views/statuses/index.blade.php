@@ -1,17 +1,27 @@
 @extends('layouts.default')
 
 @section('content')
-	<div class="status-post">
-		{{ Former::open()->route('statuses_path')->method('POST') }}
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
 
-		{{ Former::textarea('body')->label('Status')->placeholder("What's on your mind?") }}
+			@include('layouts.partials.form_errors')
 
-		{{ Former::actions()->primary_submit('Post Status')->inverse_reset('Reset') }}
+			<div class="status-post">
+				{{ Form::open(['route' => 'statuses_path']) }}
+				<div class="form-group status-post-input">
+					{{ Form::label('Status', 'Status:', ['class' => 'sr-only sr-only-focusable']) }}
+					{{ Form::textarea('body', null, ['rows' => 3, 'class' => 'form-control', 'placeholder' => 'What up fool!?']) }}
+				</div>
 
-		{{Former::close()}}
+				<div class="form-group status-post-submit">
+					{{ Form::submit('Post Status', ['class' => 'btn btn-default btn-xs']) }}
+				</div>
+				{{ Form::close() }}
+			</div>
+
+			@foreach($statuses as $status)
+				@include('statuses.partials.status')
+			@endforeach
+		</div>
 	</div>
-
-	@foreach($statuses as $status)
-		@include ('statuses.partials.status')
-	@endforeach
 @stop
