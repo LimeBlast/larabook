@@ -8,7 +8,8 @@
         "laracasts/commander": "~1.0",
         "anahkiasen/former": "~3.4",
 		"laracasts/validation": "1.1.*",
-        "laracasts/flash": "~1.0"
+        "laracasts/flash": "~1.0",
+        "laracasts/presenter": "0.1.*"
 	},
     "require-dev": {
         "way/generators": "~2.0",
