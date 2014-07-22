@@ -28,6 +28,8 @@ img.top-nav-gravatar {
     border: none; }
   .status-post .status-post-input {
     margin: 0; }
+    .status-post .status-post-input textarea {
+      resize: vertical; }
   .status-post .status-post-submit {
     border-top: 1px solid #e9e9e9;
     padding: 0.5em 1em;
