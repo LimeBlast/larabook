@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('content')
-	<h1>Register!</h1>
+	<h1>Register</h1>
 
 	{{ Former::open()->route('register_path')->method('POST') }}
 

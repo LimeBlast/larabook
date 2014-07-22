@@ -1,6 +1,36 @@
 <?php
 
+use Larabook\Core\CommandBus;
+use Larabook\Forms\PublishStatusForm;
+use Larabook\Statuses\PublishStatusCommand;
+use Larabook\Statuses\StatusRepository;
+
+/**
+ * Class StatusController
+ */
 class StatusController extends \BaseController {
+
+	use CommandBus;
+
+	/**
+	 * @var Larabook\Forms\PublishStatusForm
+	 */
+	private $publishStatusForm;
+
+	/**
+	 * @var StatusRepository
+	 */
+	protected $statusRepository;
+
+	/**
+	 * @param Larabook\Forms\PublishStatusForm $publishStatusForm
+	 * @param StatusRepository                 $statusRepository
+	 */
+	function __construct(PublishStatusForm $publishStatusForm, StatusRepository $statusRepository)
+	{
+		$this->publishStatusForm = $publishStatusForm;
+		$this->statusRepository  = $statusRepository;
+	}
 
 	/**
 	 * Display a listing of the resource.
@@ -9,7 +39,9 @@ class StatusController extends \BaseController {
 	 */
 	public function index()
 	{
-		return View::make('statuses.index');
+		$statuses = $this->statusRepository->getAllForUser(Auth::user());
+
+		return View::make('statuses.index', compact('statuses'));
 	}
 
 
@@ -25,20 +57,29 @@ class StatusController extends \BaseController {
 
 
 	/**
-	 * Store a newly created resource in storage.
+	 * Store a new status
 	 *
 	 * @return Response
 	 */
 	public function store()
 	{
-		//
+		$this->publishStatusForm->validate(Input::only('body'));
+
+		$this->execute(
+			new PublishStatusCommand(Input::get('body'), Auth::user()->id)
+		);
+
+		Flash::message('Your status has been updated');
+
+		return Redirect::refresh();
 	}
 
 
 	/**
 	 * Display the specified resource.
 	 *
-	 * @param  int  $id
+	 * @param  int $id
+	 *
 	 * @return Response
 	 */
 	public function show($id)
@@ -50,7 +91,8 @@ class StatusController extends \BaseController {
 	/**
 	 * Show the form for editing the specified resource.
 	 *
-	 * @param  int  $id
+	 * @param  int $id
+	 *
 	 * @return Response
 	 */
 	public function edit($id)
@@ -62,7 +104,8 @@ class StatusController extends \BaseController {
 	/**
 	 * Update the specified resource in storage.
 	 *
-	 * @param  int  $id
+	 * @param  int $id
+	 *
 	 * @return Response
 	 */
 	public function update($id)
@@ -74,7 +117,8 @@ class StatusController extends \BaseController {
 	/**
 	 * Remove the specified resource from storage.
 	 *
-	 * @param  int  $id
+	 * @param  int $id
+	 *
 	 * @return Response
 	 */
 	public function destroy($id)
