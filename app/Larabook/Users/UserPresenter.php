@@ -1,4 +1,4 @@
-<?php namespace Larabook\Presenters;
+<?php namespace Larabook\Users;
 
 use Laracasts\Presenter\Presenter;
 

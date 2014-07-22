@@ -1,23 +1,17 @@
 @extends('layouts.default')
 
 @section('content')
-	<h1>Post a Status</h1>
+	<div class="status-post">
+		{{ Former::open()->route('statuses_path')->method('POST') }}
 
-	{{ Former::open()->route('statuses_path')->method('POST') }}
+		{{ Former::textarea('body')->label('Status')->placeholder("What's on your mind?") }}
 
-	<fieldset>
-		{{ Former::textarea('body')->label('Status') }}
-	</fieldset>
+		{{ Former::actions()->primary_submit('Post Status')->inverse_reset('Reset') }}
 
-	{{ Former::actions()->primary_submit('Post Status')->inverse_reset('Reset') }}
-
-	{{Former::close()}}
-
-	<h2>Statuses</h2>
+		{{Former::close()}}
+	</div>
 
 	@foreach($statuses as $status)
-		<article>
-			{{ $status->body }}
-		</article>
+		@include ('statuses.partials.status')
 	@endforeach
 @stop

@@ -43,8 +43,6 @@ class StatusRepositoryTest extends \Codeception\TestCase\Test {
 
 		// Then I should receive only the relevant ones
 		$this->assertCount(2, $statusesForUser);
-		$this->assertEquals($statuses[0], $statusesForUser[0]);
-		$this->assertEquals($statuses[1], $statusesForUser[1]);
 	}
 
 	/** @test */
