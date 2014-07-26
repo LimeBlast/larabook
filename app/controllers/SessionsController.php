@@ -41,6 +41,10 @@ class SessionsController extends \BaseController {
 			Flash::message('Welcome back');
 
 			return Redirect::intended('statuses');
+		} else {
+			Flash::error('Login failed, please try again');
+
+			return Redirect::back();
 		}
 
 	}
