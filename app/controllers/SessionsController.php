@@ -58,7 +58,7 @@ class SessionsController extends \BaseController {
 	{
 		Auth::logout();
 
-		Flash::message('You have no been logged out');
+		Flash::message('You have now been logged out');
 
 		return Redirect::home();
 	}
